@@ -1,0 +1,6 @@
+{
+  "parent": "purple:item/generated",
+  "textures": {
+    "layer0": "purple:food/purple_apple"
+  }
+}

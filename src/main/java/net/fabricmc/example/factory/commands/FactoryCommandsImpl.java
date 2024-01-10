@@ -1,6 +1,5 @@
 package net.fabricmc.example.factory.commands;
 
-<<<<<<< HEAD
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
@@ -11,11 +10,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-=======
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import net.fabricmc.example.commands.Commands;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
->>>>>>> dri_branch
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 

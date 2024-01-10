@@ -29,8 +29,7 @@ public class FactoryCommandsImpl implements FactoryCommands{
                                 commands.execute(function); // Execute the function of param
                                 return 1;
                             })
-                     );
+            );
         });
     }
 }
-

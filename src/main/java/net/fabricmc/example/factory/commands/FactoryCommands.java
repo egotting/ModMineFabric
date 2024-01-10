@@ -1,12 +1,9 @@
 package net.fabricmc.example.factory.commands;
 
-import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.tree.LiteralCommandNode;
-import net.minecraft.server.command.ServerCommandSource;
+import net.fabricmc.example.commands.Commands;
 
 public interface FactoryCommands {
-    void createCommandNoArguments(String nameCommand);
-    void createCommandNoArguments(String nameCommand, Runnable function, String messageFeedback);
+    void createBasicCommandNoArguments(String nameCommand);
+    void createCommandWithFunctionArgument(String nameComamnd, Commands commands, Runnable function);
 
-    LiteralCommandNode createLiteralCommands(CommandDispatcher<ServerCommandSource> dispatcher, String nameCommand, Runnable command);
 }

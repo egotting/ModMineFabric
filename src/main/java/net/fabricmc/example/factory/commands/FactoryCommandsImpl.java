@@ -1,5 +1,6 @@
 package net.fabricmc.example.factory.commands;
 
+<<<<<<< HEAD
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
@@ -10,6 +11,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+=======
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import net.fabricmc.example.commands.Commands;
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+>>>>>>> dri_branch
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 
@@ -17,13 +23,34 @@ import static net.fabricmc.example.consts.CommandsMessages.COMMAND_SUCCESSFULLY_
 import static net.minecraft.server.command.CommandManager.literal;
 public class FactoryCommandsImpl implements FactoryCommands{
 
+<<<<<<< HEAD
     public void createCommandBasicCommandNoArguments(String nameCommand) {
+=======
+    @Override
+>>>>>>> dri_branch
     public void createBasicCommandNoArguments(String nameCommand) {
         CommandRegistrationCallback.EVENT.register(((dispatcher, dedicated) -> dispatcher.register(literal(nameCommand)
                 .executes(context -> {
                     context.getSource().sendFeedback(Text.of(COMMAND_SUCCESSFULLY_MESSAGE), false);
                     return 1;
                 }))));
+<<<<<<< HEAD
+=======
+    }
+
+    @Override
+    public void createCommandWithFunctionArgument(String nameCommand, Commands commands, Runnable function) {
+        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
+            dispatcher.register(
+                    LiteralArgumentBuilder.<ServerCommandSource>literal(nameCommand)
+                            .executes(context -> {
+                                commands.setCommandSource(context.getSource()); //Context of command by player
+                                commands.execute(function); // Execute the function of param
+                                return 1;
+                            })
+                     );
+        });
+>>>>>>> dri_branch
     }
 
     @Override

@@ -1,8 +1,11 @@
 package net.fabricmc.example;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
+=======
+>>>>>>> dri_branch
 =======
 >>>>>>> dri_branch
 import net.fabricmc.api.ModInitializer;
@@ -10,10 +13,13 @@ import net.fabricmc.example.commands.Commands;
 import net.fabricmc.example.factory.commands.FactoryCommands;
 import net.fabricmc.example.factory.commands.FactoryCommandsImpl;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Identifier;
+=======
+>>>>>>> dri_branch
 =======
 >>>>>>> dri_branch
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -32,10 +38,16 @@ public class ExampleMod implements ModInitializer {
 
 		FactoryCommands factoryCommands = new FactoryCommandsImpl();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		factoryCommands.createCommandBasicCommandNoArguments("Carlos");
 		CommandDispatcher<ServerCommandSource> dispatcher = new CommandDispatcher<>(); // Cria um dispatcher de comandos
 		factoryCommands.createCommandCommandNoArguments("diamante", dispatcher);
 		//Registrando o item
+=======
+		Commands commands = new Commands();
+		factoryCommands.createCommandWithFunctionArgument("start", commands, commands.giveBookQuests());
+        //Registrando o item
+>>>>>>> dri_branch
 =======
 		Commands commands = new Commands();
 		factoryCommands.createCommandWithFunctionArgument("start", commands, commands.giveBookQuests());

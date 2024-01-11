@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "purple:item/purple_apple"
+    "layer0": "purple:item/start_book"
   }
 }

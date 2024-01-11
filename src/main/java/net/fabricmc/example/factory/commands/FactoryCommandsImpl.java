@@ -10,6 +10,7 @@ import static net.fabricmc.example.consts.CommandsMessages.COMMAND_SUCCESSFULLY_
 import static net.minecraft.server.command.CommandManager.literal;
 public class FactoryCommandsImpl implements FactoryCommands{
 
+
     @Override
     public void createBasicCommandNoArguments(String nameCommand) {
         CommandRegistrationCallback.EVENT.register(((dispatcher, dedicated) -> dispatcher.register(literal(nameCommand)
@@ -18,6 +19,7 @@ public class FactoryCommandsImpl implements FactoryCommands{
                     return 1;
                 }))));
     }
+
 
     @Override
     public void createCommandWithFunctionArgument(String nameCommand, Commands commands, Runnable function) {
@@ -29,8 +31,9 @@ public class FactoryCommandsImpl implements FactoryCommands{
                                 commands.execute(function); // Execute the function of param
                                 return 1;
                             })
-                     );
+            );
         });
     }
-}
 
+
+}

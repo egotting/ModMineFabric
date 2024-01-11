@@ -1,3 +1,6 @@
 {
-  "item.purple.purple_apple": "Purple Apple"
+  "item.purple.purple_apple": "Purple Apple",
+  "item.purple.start_book": "Start Book",
+  "itemGroup.purple.purple_apple":"Food",
+  "itemGroup.purple.start_book":"General"
 }

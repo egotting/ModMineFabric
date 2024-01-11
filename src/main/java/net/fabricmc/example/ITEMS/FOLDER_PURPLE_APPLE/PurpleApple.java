@@ -1,14 +1,15 @@
-package net.fabricmc.example.FOLDER_PURPLE_APPLE.CustomItems;
+package net.fabricmc.example.ITEMS.FOLDER_PURPLE_APPLE;
 
+import net.fabricmc.example.ITEMS.CUSTOM_ITEMS_GROUP.FoodGroup;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 
 
 public class PurpleApple extends Item {
     // mecionando o grupo do item
     public PurpleApple() {
-        super(new Settings().group(ItemGroup.FOOD));
+        super(new Settings().group(FoodGroup.FOOD_GROUP_ITEM).food(new FoodComponent.Builder().alwaysEdible().build()));
     }
 
     // extanciando o item da class

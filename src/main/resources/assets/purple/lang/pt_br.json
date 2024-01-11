@@ -1,3 +1,6 @@
 {
-  "item.purple.purple_apple": "Maça roxa"
+  "item.purple.purple_apple": "Maça roxa",
+  "item.purple.start_book": "Livro Inicial",
+  "itemGroup.purple.purple_apple":"Comida",
+  "itemGroup.purple.start_book":"Geral"
 }

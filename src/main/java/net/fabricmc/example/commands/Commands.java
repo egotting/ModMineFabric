@@ -27,7 +27,7 @@ public class Commands implements Command {
                 final ServerPlayerEntity self = this.getCommandSource().getPlayer();
                 ItemStack book = new ItemStack(Items.BOOK);
                 if (!self.getInventory().insertStack(book)) {
-                    throw new CommandException(new TranslatableText("commands.giveBookQuest.isfull"));
+                    throw new CommandException(new TranslatableText("commands.giveBookQuest.isfull")); //  If is inventory of player full
                 }
                 this.getCommandSource().sendFeedback(new TranslatableText("commands.giveBookQuest.success", self.getDisplayName()), true);
             } catch (CommandSyntaxException e) {
@@ -35,6 +35,8 @@ public class Commands implements Command {
             }
         };
     }
+
+
     @Override
     public void execute(Runnable runnable) {
         runnable.run();

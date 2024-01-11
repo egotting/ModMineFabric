@@ -5,14 +5,17 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 public class StartBook extends Item {
+    // colocando a classe do item
     public StartBook() {
         super(new Settings().group(ItemGroup.ITEM_CUSTOM_GROUP));
     }
 
-
+    // Criando o item
     public static final Item START_BOOK = new StartBook();
 
-
+    // Criando o identificador do item (id)
     public static final Identifier ID_START_BOOK = new Identifier("purple","start_book");
+
+
 
 }

@@ -1,13 +1,20 @@
 package net.fabricmc.example.commands;
 
+import com.google.gson.JsonObject;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.fabricmc.example.ITEMS.FOLDER_START_BOOK.StartBook;
+import net.fabricmc.example.consts.CommandsMessages;
+import net.fabricmc.example.exceptions.PlayerAlreadyHaveBookQuests;
+import net.fabricmc.example.files.FileManager;
 import net.minecraft.command.CommandException;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.LiteralText;
-import net.minecraft.text.TranslatableText;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Commands implements Command {
 
@@ -23,19 +30,34 @@ public class Commands implements Command {
 
     public Runnable giveBookQuests() {
         return () -> {
-            try {
-                final ServerPlayerEntity self = this.getCommandSource().getPlayer();
-                ItemStack book = new ItemStack(Items.BOOK);
-                if (!self.getInventory().insertStack(book)) {
-                    throw new CommandException(new TranslatableText("commands.giveBookQuest.isfull")); //  If is inventory of player full
+            if (!this.verifyIfPlayerAlreadyGetBookOfQuests(this.getPlayer())) {
+                ItemStack book = new ItemStack(StartBook.START_BOOK); // Book start mod
+                if (!this.getPlayer().getInventory().insertStack(book)) {
+                    throw new CommandException(new LiteralText("commands.giveBookQuest.isfull")); //  If is inventory of player full
                 }
-                this.getCommandSource().sendFeedback(new TranslatableText("commands.giveBookQuest.success", self.getDisplayName()), true);
-            } catch (CommandSyntaxException e) {
-                throw new CommandException(new LiteralText(e.getMessage()));
-            }
+                this.getCommandSource().sendFeedback(CommandsMessages.COMMAND_BOOK_START, true);
+            };
         };
     }
 
+    private boolean verifyIfPlayerAlreadyGetBookOfQuests(PlayerEntity player) {
+        if (player.getInventory().contains(StartBook.START_BOOK.getDefaultStack())) {
+            this.getCommandSource().sendFeedback(CommandsMessages.BOOK_ALREADY_ON_INVENTORY, false);
+           // throw new PlayerAlreadyHaveBookQuests("The player already have the book of quests");
+            return true;
+        }
+        return false;
+    }
+
+    private PlayerEntity getPlayer() {
+            final ServerPlayerEntity self;
+            try {
+                self = this.getCommandSource().getPlayer(); //CommandSource return player of command context
+            } catch (CommandSyntaxException e) {
+                throw new RuntimeException(e); // Custom exception after
+            }
+            return self;
+    }
 
     @Override
     public void execute(Runnable runnable) {

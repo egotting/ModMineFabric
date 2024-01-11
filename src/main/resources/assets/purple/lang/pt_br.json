@@ -2,5 +2,8 @@
   "item.purple.purple_apple": "Maça roxa",
   "item.purple.start_book": "Livro Inicial",
   "itemGroup.purple.purple_apple":"Comida",
-  "itemGroup.purple.start_book":"Geral"
+  "itemGroup.purple.start_book":"Geral",
+  "item.purple.start_book.message_start": "Sua aventura apenas começou!!",
+  "item.purple.start_book.already_have_book": "O livro de desafio já está no seu inventário"
+
 }

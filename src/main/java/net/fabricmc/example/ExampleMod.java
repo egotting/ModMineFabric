@@ -15,7 +15,6 @@ import static net.fabricmc.example.FOLDER_PURPLE_APPLE.CustomItems.PurpleApple.P
 public class ExampleMod implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger("modid");
 
-
 	@Override
 	public void onInitialize() {
 
@@ -26,5 +25,6 @@ public class ExampleMod implements ModInitializer {
 		BuiltinRegistries.add(Registry.ITEM, PURPLE_APPLE_ID, PURPLE_APPLE);
 		// menssagem ao entrar no jogo
 		LOGGER.info("Hi, my name is Ego and i`am the creator of this mod, i hope that u have fun 😘 !");
+
 	}
 }

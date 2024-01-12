@@ -4,9 +4,9 @@
   "package": "net.fabricmc.example.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "HasPressedBookQuestsMixin"
   ],
   "client": [
-    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -4,7 +4,8 @@
   "itemGroup.purple.purple_apple":"Food",
   "itemGroup.purple.start_book":"General",
   "item.purple.start_book.message_start": "Your adventure has just begun!!!",
-  "item.purple.start_book.already_have_book": "The challenge book is already in your inventory"
-
+  "item.purple.start_book.already_have_book": "The challenge book is already in your inventory",
+  "item.purple.inventory_full": "Is your inventory full!",
+  "item.purple.drop_book_quests": "You can't put down the challenge book!"
 
 }

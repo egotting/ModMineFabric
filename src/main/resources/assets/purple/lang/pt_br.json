@@ -4,6 +4,9 @@
   "itemGroup.purple.purple_apple":"Comida",
   "itemGroup.purple.start_book":"Geral",
   "item.purple.start_book.message_start": "Sua aventura apenas começou!!",
-  "item.purple.start_book.already_have_book": "O livro de desafio já está no seu inventário"
+  "item.purple.start_book.already_have_book": "O livro de desafio já está no seu inventário",
+  "item.purple.inventory_full": "Seu inventário está cheio!",
+  "item.purple.drop_book_quests": "Você não pode largar o livro de desafios!"
+
 
 }

@@ -9,7 +9,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(MinecraftClient.class)
-public class HasPressedBookQuestsMixin {
+ // The purpose of this class is to cancel the event of dropping item when the current item from the player's hand is book quests
+public class WasPressedBookQuestsMixin {
 
     @Redirect(method = "handleInputEvents",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/KeyBinding;wasPressed()Z",

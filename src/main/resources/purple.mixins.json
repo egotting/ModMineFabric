@@ -4,7 +4,7 @@
   "package": "net.fabricmc.example.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "HasPressedBookQuestsMixin"
+    "WasPressedBookQuestsMixin"
   ],
   "client": [
   ],

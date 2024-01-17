@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(MinecraftClient.class)
  // The purpose of this class is to cancel the event of dropping item when the current item from the player's hand is book quests
-public class WasPressedBookQuestsMixin {
+public class NoDropStartBookItemKeybindMixin {
 
     @Redirect(method = "handleInputEvents",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/KeyBinding;wasPressed()Z",
@@ -19,7 +19,7 @@ public class WasPressedBookQuestsMixin {
         ItemStack itemInHand = getItemInHand();
         if (itemInHand != null && itemInHand.getItem() == StartBook.START_BOOK) {
             assert MinecraftClient.getInstance().player != null;
-            return false; // the item don't will be dropped
+            return false; // the item not will be dropped
         }
         return binding.wasPressed();
     }

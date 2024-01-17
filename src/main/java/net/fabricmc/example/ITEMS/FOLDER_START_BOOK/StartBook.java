@@ -18,10 +18,5 @@ public class StartBook extends Item {
     // Criando o identificador do item (id)
     public static final Identifier ID_START_BOOK = new Identifier("purple","start_book");
 
-    public static final ScreenHandlerType<ScreenBookScreenHandler> SCREEN_BOOK_SCREEN_HANDLER =
-            ScreenHandlerRegistry.registerSimple(new Identifier("purple","start_book"),
-                    ScreenBookScreenHandler::new);
-
-
 
 }

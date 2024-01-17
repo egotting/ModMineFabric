@@ -8,7 +8,7 @@ import net.minecraft.screen.ScreenHandlerType;
 
 public class ScreenBookScreenHandler extends ScreenHandler
 {
-    protected ScreenBookScreenHandler(int syncId, PlayerInventory playerInventory)
+    public ScreenBookScreenHandler(int syncId, PlayerInventory playerInventory)
     {
         this(ScreenHandlerType.GENERIC_9X3, syncId, playerInventory, ScreenHandlerContext.EMPTY);
     }

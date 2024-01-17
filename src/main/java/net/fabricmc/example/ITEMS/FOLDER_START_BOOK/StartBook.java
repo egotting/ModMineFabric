@@ -1,7 +1,9 @@
 package net.fabricmc.example.ITEMS.FOLDER_START_BOOK;
 
 import net.fabricmc.example.ITEMS.CUSTOM_ITEMS_GROUP.ItemGroup;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 
 public class StartBook extends Item {
@@ -15,6 +17,10 @@ public class StartBook extends Item {
 
     // Criando o identificador do item (id)
     public static final Identifier ID_START_BOOK = new Identifier("purple","start_book");
+
+    public static final ScreenHandlerType<ScreenBookScreenHandler> SCREEN_BOOK_SCREEN_HANDLER =
+            ScreenHandlerRegistry.registerSimple(new Identifier("purple","start_book"),
+                    ScreenBookScreenHandler::new);
 
 
 

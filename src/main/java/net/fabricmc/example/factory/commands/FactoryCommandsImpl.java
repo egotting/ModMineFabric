@@ -21,6 +21,7 @@ public class FactoryCommandsImpl implements FactoryCommands{
     }
 
 
+
     @Override
     public void createCommandWithFunctionArgument(String nameCommand, Commands commands, Runnable function) {
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
@@ -31,6 +32,7 @@ public class FactoryCommandsImpl implements FactoryCommands{
                                 commands.execute(function); // Execute the function of param
                                 return 1;
                             })
+
             );
         });
     }
